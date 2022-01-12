@@ -41,7 +41,9 @@ var hardStop = false;
 
 
 function setup() {
-  createCanvas(800, 800);
+  //createCanvas(windowWidth, windowHeight);
+  var canvas = createCanvas(800, 800);
+  canvas.style('display','block');
   //build basic color array
   let c0 = color(250, 248, 249);//offwhite
   let c1 = color(203, 50, 45);//lightred
