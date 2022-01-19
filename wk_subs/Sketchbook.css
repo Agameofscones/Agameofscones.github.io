@@ -50,13 +50,17 @@
   min-height: 100vh;
 }
 
+.u-section-2 .u-text-1 {
+  margin: 27px auto 0;
+}
+
 .u-section-2 .u-image-1 {
   width: 276px;
   height: 276px;
-  margin: 191px auto 0;
+  margin: 27px auto 0;
 }
 
-.u-section-2 .u-text-1 {
+.u-section-2 .u-text-2 {
   font-size: 1.5rem;
   font-style: italic;
   margin: 30px auto 60px;
