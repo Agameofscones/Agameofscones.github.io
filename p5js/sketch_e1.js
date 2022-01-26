@@ -9,13 +9,6 @@
 //Take care at faster speeds colors will flash RAPIDLY.
 //EPILEPTIC USERS, EXERCISE CAUTION!
 
-//look into resizing the canvas to the window size
-//or considering centering it
-//add additional CSS with a background?
-//for turn in, either link from the online editor
-//or commit to git and turn it in a staticly hosted site: https://pages.github.com/
-//open processing is also a great place to post your content!
-
 const colors = [];
 const colorsDefault = [];
 const newColors = [];
