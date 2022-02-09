@@ -1,3 +1,9 @@
+//Lightbulbs with cable roots
+//by Gwydion B. 2022
+
+//color_seeding.js derivced from the work of RudgyG22 @ https://editor.p5js.org/RudyG22/sketches/rkCtpaI2Q
+//be warned, ripe fermented code ahead.
+
 // let curveStep = 50;
 // let cableWidth = 10;
 // let cablePieceAmt = 20;
