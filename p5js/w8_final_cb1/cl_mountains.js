@@ -13,12 +13,28 @@ class perlinHillObj {
         this.offsetOnce = false;
         this.coolor = color(0);
 
+        this.perlinScale = 1;
+        this.perlinScaleMin = 0.5;
+        this.perlinScaleMax = 1.5;
+        this.perlinGrowth = 0.0000000092;
+        this.decro = false;
     }
 
+    perlinBreath(){
+        if(this.decro){
+            this.perlinScale += this.perlinGrowth;
+        } else if (!this.decro){
+            this.perlinScale += -this.perlinGrowth;
+        }
+        if(this.perlinScale > this.perlinScaleMax || this.perlinScale < this.perlinScaleMin){
+            this.decro = !this.decro;
+        }
+    }
 
     generatePerlinOffset(){
         if(!this.offsetOnce){
             this.perlinOffset = random(-41300,41300);
+            this.perlinScale = random(this.perlinScaleMin,this.perlinScaleMin);
             this.offsetOnce = true;
         } else {
             return;
@@ -30,28 +46,26 @@ class perlinHillObj {
     }
 
     doPerlinJump(){
-        console.log("penis!");
         this.perlinOffset = random(-41300,41300);
     }
 
     doPerlinScroll(){
         if(!this.perlinScrollBool){
-            //console.log("It is not penis fridays");
             return;
         } else if(this.perlinScrollBool){
-            //console.log("penis fridays");
             this.perlinOffset += this.perlinScrollSpeed;
         }
     }
 
     drawPerlinToHill(){
+        this.perlinBreath();
         beginShape();
         vertex(0,this.base);
         noStroke();
         fill(this.coolor);
         for(let i = 0; i < width; i++){
-            let yran = noise((i/this.iscale)+this.perlinOffset);
-            vertex(i,(yran*this.yscale)+(this.offset));
+            let yran = noise((i/this.iscale)+this.perlinOffset*this.perlinScale);
+            vertex(i,(yran*this.yscale*this.perlinScale)+(this.offset));
         }
         vertex(width,this.base);
         endShape();

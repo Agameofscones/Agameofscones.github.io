@@ -4,9 +4,11 @@
 var globalRotation = 1
 var testFib;
 var fibos = [];
+var strandTypeGameplay;
 
 function setupFibosManual(){
-    testFib = new fibo(720,0,height/-5);
+    strandTypeGameplay = int(width/3 * 2);//int() in case we accidently get a decimal
+    testFib = new fibo(strandTypeGameplay,0,height/-5);
     fibos.push(testFib);
     //define other fibos here, as needed
 }
@@ -31,7 +33,7 @@ class fibo{
         for(let i = 0; i < this.generations; i++){
             strokeWeight(i*0.0005);
             strokeCap(SQUARE);
-            stroke(255,20);
+            stroke(fiboColor);
             push();
             translate((width/2)+this.tw,(height/2)+this.th);
             rotate(globalRotation * i + 1*i);

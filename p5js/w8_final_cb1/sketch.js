@@ -1,12 +1,13 @@
 var perlinHills = [];
 var testHill;
-var totalHills = 5;
+var totalHills = 10;
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
   colorMode(HSB,360,100,100,100);
-  bkColor = color(0,0,0,20);
+  bkColor = color(255,20);
   letterboxColor = color(255);
+  fiboColor = color(0,80);
   angleMode(DEGREES);
   setupFibosManual();
   loadBanks();
@@ -14,12 +15,12 @@ function setup() {
   seedHillColors();
   seedColors();
   generatePerlinHills();
-  testHill = new perlinHillObj(0,300,300,500,5444);
+  //testHill = new perlinHillObj(0,300,300,500,5444);
 }
 
 function generatePerlinHills(){
   for(let i = 0; i < totalHills; i++){
-    perlinHills[i] = new perlinHillObj(height,(250 +(i * 50)),500,800);
+    perlinHills[i] = new perlinHillObj(height,(350 +(i * 50)),500,800);
     perlinHills[i].generatePerlinOffset();
     perlinHills[i].coolor = hillColors[i];
     perlinHills[i].setPerlinScroll(true);

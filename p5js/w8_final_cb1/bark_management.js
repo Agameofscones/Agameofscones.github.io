@@ -76,7 +76,7 @@ class timedBark {
     //console.log("Generated new bark delay");
   }
   runTimer(){
-    console.log("running bark timer");
+    //console.log("running bark timer");
     if(!this.timerRunning){//if we're not running yet, run us.
       this.genNewDelay();
       this.timer = globalTime + this.newDelay;
@@ -84,7 +84,7 @@ class timedBark {
       console.log("Got new bark timer");
     }
     if(globalTime > this.timer){
-      console.log("BARK!");
+      console.log("Bork!");
       this.timerRunning = false;
       //temp visual input, might be useful later?
       fill(bkColor);

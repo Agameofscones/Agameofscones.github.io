@@ -9,6 +9,7 @@ var totalColors = 5;
 var hillColors = [];
 
 var bkColor;
+var fiboColor;
 
 function seedColors() {
     
