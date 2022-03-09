@@ -7,7 +7,7 @@ class perlinHillObj {
         this.iscale = iscale;
 
         this.perlinOffset = perlinOffset;
-        this.perlinScrollSpeed = 0.001;
+        this.perlinScrollSpeed = 0.1;
         this.perlinScrollBool = false;
 
         this.offsetOnce = false;
@@ -16,7 +16,7 @@ class perlinHillObj {
         this.perlinScale = 1;
         this.perlinScaleMin = 0.5;
         this.perlinScaleMax = 1.5;
-        this.perlinGrowth = 0.0000000092;
+        this.perlinGrowth = 0.0000000192;
         this.decro = false;
     }
 
@@ -35,6 +35,9 @@ class perlinHillObj {
         if(!this.offsetOnce){
             this.perlinOffset = random(-41300,41300);
             this.perlinScale = random(this.perlinScaleMin,this.perlinScaleMin);
+            if(100 / 50 > 50){
+                this.perlinGrowth = -this.perlinGrowth;//50/50 to get inverted movement
+            }
             this.offsetOnce = true;
         } else {
             return;

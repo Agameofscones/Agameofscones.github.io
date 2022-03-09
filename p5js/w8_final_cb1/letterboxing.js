@@ -5,8 +5,8 @@ var letterboxColor;
 var LxH = 2;
 var LxW = 5;
 
-var LxH_G = 0.018;
-var LxW_G = 0.026;
+var LxH_G = 0.009;
+var LxW_G = 0.018;
 
 function drawLetterBox(){
     fill(letterboxColor);

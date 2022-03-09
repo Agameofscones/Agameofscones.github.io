@@ -31,7 +31,7 @@ class fibo{
         let wub = 10;
         let hub = 20;
         for(let i = 0; i < this.generations; i++){
-            strokeWeight(i*0.0005);
+            strokeWeight(i*0.0015);
             strokeCap(SQUARE);
             stroke(fiboColor);
             push();

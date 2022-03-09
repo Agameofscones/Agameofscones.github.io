@@ -1,21 +1,28 @@
 var perlinHills = [];
 var testHill;
-var totalHills = 10;
+var totalHills = 7;
+
+function preload(){
+  soundFormats('ogg');//ogg 4 lyfe
+  loadBanks();
+}
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
   colorMode(HSB,360,100,100,100);
   bkColor = color(255,20);
   letterboxColor = color(255);
-  fiboColor = color(0,80);
+  fiboColor = color(0,15);
   angleMode(DEGREES);
   setupFibosManual();
-  loadBanks();
+  
 
   seedHillColors();
   seedColors();
   generatePerlinHills();
   //testHill = new perlinHillObj(0,300,300,500,5444);
+  pinkNoiseBark.playSound();
+  ambientSpit.playSound();
 }
 
 function generatePerlinHills(){

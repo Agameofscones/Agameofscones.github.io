@@ -10,6 +10,23 @@ var hillColors = [];
 
 var bkColor;
 var fiboColor;
+var fiboFlipped = false;
+
+function flipFiboColors(){
+    if(fiboFlipped){
+        //console.log("yawohl");
+        bkColor = color(255,20);
+        letterboxColor = color(255);
+        fiboColor = color(0,15);
+    } else if (!fiboFlipped){
+        //console.log("brownian noises");
+        bkColor = color(0,20);
+        letterboxColor = color(0);
+        fiboColor = color(255,15);
+    }
+    fiboFlipped = !fiboFlipped;
+    globalRotation += random(0,360);
+}
 
 function seedColors() {
     
@@ -33,7 +50,7 @@ function seedHillColors(){
     for(let i = 0; i < totalHills; i++){
         let nH = H+(-2*i);
         let nS = S+(-2*i);
-        let nL = L+(-2*i);
+        let nL = L+(-3*i);
         let imstuff = color(nH,nS,nL,100);
         hillColors.push(imstuff);
     }
