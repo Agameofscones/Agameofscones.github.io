@@ -46,7 +46,7 @@ function drawPerlinHills(bool){
 }
 
 function draw() {
-  
+  drawEye(2);
   drawFibos();
   drawPerlinHills(false);
   background(bkColor);

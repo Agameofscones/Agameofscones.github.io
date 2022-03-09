@@ -17,7 +17,7 @@ function flipFiboColors(){
         //console.log("yawohl");
         bkColor = color(255,20);
         letterboxColor = color(255);
-        fiboColor = color(0,15);
+        fiboColor = color(0,55);
     } else if (!fiboFlipped){
         //console.log("brownian noises");
         bkColor = color(0,20);

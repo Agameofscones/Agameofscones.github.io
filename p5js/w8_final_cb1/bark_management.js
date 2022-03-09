@@ -107,6 +107,35 @@ function timeBarks(){
 }
 
 //-------------------//
+//     Eye CLASS     //
+//-------------------//
+
+function drawEye(posX,posY,scaler){
+  push();
+  fill(bkColor);
+  stroke(bkColor);
+  translate(posX,posY);
+  scale(scaler);
+  circle(0,0,10);
+  noFill();
+  beginShape();
+  curveVertex(-20,0);
+  curveVertex(-20,0);
+  curveVertex(0,8);
+  curveVertex(20,0);
+  curveVertex(20,0);
+  endShape();
+  beginShape();
+  curveVertex(-20,0);
+  curveVertex(-20,0);
+  curveVertex(0,-10);
+  curveVertex(20,0);
+  curveVertex(20,0);
+  endShape();
+  pop();
+}
+
+//-------------------//
 //     BARK CLASS    //
 //-------------------//
 
@@ -171,19 +200,19 @@ class timedBark {
       //temp visual input, might be useful later?
       fill(bkColor);
       noStroke();
-      circle(random(0,width),random(0,height),2);//todo make an eyeball
-      circle(random(0,width),random(0,height),3);
-      circle(random(0,width),random(0,height),2);
-      circle(random(0,width),random(0,height),1);
-      circle(random(0,width),random(0,height),1);
-      circle(random(0,width),random(0,height),1);
-      circle(random(0,width),random(0,height),2);
-      circle(random(0,width),random(0,height),3);
-      circle(random(0,width),random(0,height),4);
-      circle(random(0,width),random(0,height),4);
-      circle(random(0,width),random(0,height),3);
-      circle(random(0,width),random(0,height),2);
-      circle(random(0,width),random(0,height),5);
+      let dots = random(0,50);
+      for(let d = 0; d <= dots; d++){
+        let dS = random(1,5);
+        circle(random(0,width),random(0,height),dS);
+      }
+
+      let eyes = 1;
+      for(let e = 0; e <= eyes; e++){
+        let pX = random(0,width);
+        let pY = random(0,height);
+        let pS = random(0.5,2);
+        drawEye(pX,pY,pS);
+      }
       let jumpHill = int(random(0,perlinHills.length));
       perlinHills[jumpHill].doPerlinJump();
       
@@ -197,6 +226,13 @@ class timedBark {
         bankClick[0].play();
         flipFiboColors();
         console.log(clickbuild);
+        let eyes = int(random(10,25));
+        for(let e = 0; e <= eyes; e++){
+          let pX = random(0,width);
+          let pY = random(0,height);
+          let pS = random(1,4);
+          drawEye(pX,pY,pS);
+        }
       }
 
     }
